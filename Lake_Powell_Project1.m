@@ -36,69 +36,20 @@ switch User_Choice
 
     %% Part B
     case "Bar"
-        counter1 = 0;
-        %Number of months exceeding average for year 1
-        for k1 = 1:length(year1)
-            if year1(k1)>average_total
-                counter1 = counter1 + 1;
-            end
-        end
-
-        counter2 = 0;
-        %Number of months for year 2
-        for k2 = 1:length(year2)
-            if year2(k2)>average_total
-                counter2 = counter2 + 1;
-            end
-        end
+        counter = [0,0,0,0,0,0,0,0]
         
-        %etc
-        counter3 = 0;
-        for k3 = 1:length(year3)
-            if year3(k3)>average_total
-                counter3 = counter3 + 1;
-            end
-        end
-
-        counter4 = 0;
-        for k4 = 1:length(year4)
-            if year4(k4)>average_total
-                counter4 = counter4 + 1;
-            end
-        end
-
-        counter5 = 0;
-        for k5 = 1:length(year5);
-            if year5(k5)>average_total;
-                counter5 = counter5 + 1;
-            end
-        end
-
-        counter6 = 0;
-        for k6 = 1:length(year6);
-            if year6(k6)>average_total;
-                counter6 = counter6 + 1;
-            end
-        end
-
-
-        counter7 = 0;
-        for k7 = 1:length(year7);
-            if year7(k7)>average_total;
-                counter7 = counter7 + 1;
-            end
-        end
-
-
-        counter8 = 0;
-        for k8 = 1:length(year8);
-            if year8(k8)>average_total;
-                counter8 = counter8 + 1;
-            end
-        end
+        %Number of months exceeding average for each year
         
+        for i = 1:8
+            for k = 1:length(LAKE_POWELL(:,i))
+                if LAKE_POWELL(k,i)>average_total
+                    counter(i) = counter(i) + 1;
+                end
+            end
+        end
+
         %Bar graph of data
-        bar([counter1 counter2 counter3 counter4 counter5 counter6 counter7 counter8])
+        bar(counter)
     case "Pie"
         %% Part C
         %take mean of transpose of total_years
@@ -120,69 +71,20 @@ switch User_Choice
         
         %Plot the bar graph
         subplot(2,2,2)
-        counter1 = 0;
-        %Number of months exceeding average for year 1
-        for k1 = 1:length(year1)
-            if year1(k1)>average_total
-                counter1 = counter1 + 1;
-            end
-        end
-
-        counter2 = 0;
-        %Number of months for year 2
-        for k2 = 1:length(year2)
-            if year2(k2)>average_total
-                counter2 = counter2 + 1;
-            end
-        end
+        counter = [0,0,0,0,0,0,0,0]
         
-        %etc
-        counter3 = 0;
-        for k3 = 1:length(year3)
-            if year3(k3)>average_total
-                counter3 = counter3 + 1;
-            end
-        end
-
-        counter4 = 0;
-        for k4 = 1:length(year4)
-            if year4(k4)>average_total
-                counter4 = counter4 + 1;
-            end
-        end
-
-        counter5 = 0;
-        for k5 = 1:length(year5);
-            if year5(k5)>average_total;
-                counter5 = counter5 + 1;
-            end
-        end
-
-        counter6 = 0;
-        for k6 = 1:length(year6);
-            if year6(k6)>average_total;
-                counter6 = counter6 + 1;
-            end
-        end
-
-
-        counter7 = 0;
-        for k7 = 1:length(year7);
-            if year7(k7)>average_total;
-                counter7 = counter7 + 1;
-            end
-        end
-
-
-        counter8 = 0;
-        for k8 = 1:length(year8);
-            if year8(k8)>average_total;
-                counter8 = counter8 + 1;
+        %Number of months exceeding average for each year
+        
+        for i = 1:8
+            for k = 1:length(LAKE_POWELL(:,i))
+                if LAKE_POWELL(k,i)>average_total
+                    counter(i) = counter(i) + 1;
+                end
             end
         end
         
         %Bar graph of data
-        bar([counter1 counter2 counter3 counter4 counter5 counter6 counter7 counter8])
+        bar(counter)
         
         %Plot the pie chart
         %take mean of transpose of total_years
